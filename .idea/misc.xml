@@ -10,6 +10,18 @@
         <entry key="..\:/Code/flutter/androidsecurity/app/src/main/res/layout/fragment_dashboard.xml" value="0.36666666666666664" />
         <entry key="..\:/Code/flutter/androidsecurity/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
         <entry key="..\:/Code/flutter/androidsecurity/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/drawable/ic_baseline_assignment_24.xml" value="0.25729166666666664" />
+        <entry key="app/src/main/res/drawable/ic_baseline_network_check_24.xml" value="0.2359375" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.24114583333333334" />
+        <entry key="app/src/main/res/layout/activity_report_detail.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.24114583333333334" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.24114583333333334" />
+        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.24114583333333334" />
+        <entry key="app/src/main/res/layout/fragment_report_detail.xml" value="0.15572916666666667" />
+        <entry key="app/src/main/res/layout/fragment_report_details.xml" value="0.16979166666666667" />
+        <entry key="app/src/main/res/layout/list_content.xml" value="0.24114583333333334" />
+        <entry key="app/src/main/res/layout/list_item.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.24114583333333334" />
       </map>
     </option>
   </component>
