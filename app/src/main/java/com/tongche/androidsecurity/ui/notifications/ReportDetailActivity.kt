@@ -10,7 +10,7 @@ class ReportDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityReportDetailBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_report_detail)
+        setContentView(binding.root)
 
         val name = intent.getStringExtra("name")
         val score = intent.getStringExtra("score")
@@ -20,5 +20,6 @@ class ReportDetailActivity : AppCompatActivity() {
         binding.deScore.text = score
         binding.deRank.text=riskRank
         binding.detail.text=det
+
     }
 }

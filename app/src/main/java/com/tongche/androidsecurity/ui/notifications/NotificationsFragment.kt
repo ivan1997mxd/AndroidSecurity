@@ -37,17 +37,17 @@ class NotificationsFragment : Fragment() {
 //        notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
 //            textView.text = it
 //        })
-        val name = arrayOf("Task1","Task2","Task3")
+        val name = arrayOf("Task1","Task20","Task3")
         val score = arrayOf("99","91","89")
         val riskRank = arrayOf("No risk","Low risk","Low risk")
         taskArryList = ArrayList()
         for (i in name.indices){
-            var taskReport = Report(name[i],score[i],riskRank[i],details="some details here")
+            var taskReport = Report(name[i],score[i],riskRank[i],details = "some details here")
             taskArryList.add(taskReport)
         }
-        binding.lisview.isClickable = true
-        binding.lisview.adapter=ReportAdapter(context as Activity,taskArryList)
-        binding.lisview.setOnItemClickListener{parent, view, position, id->
+        binding.listview.isClickable = true
+        binding.listview.adapter=ReportAdapter(context as Activity,taskArryList)
+        binding.listview.setOnItemClickListener{parent, view, position, id->
             val name = name[position]
             val score = score[position]
             val riskRank =riskRank[position]

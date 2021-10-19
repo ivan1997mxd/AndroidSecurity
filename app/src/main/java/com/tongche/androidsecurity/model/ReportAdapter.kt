@@ -17,7 +17,7 @@ class ReportAdapter(private val context: Activity, private val arrayList: ArrayL
         var imageView:ImageView = view.findViewById(R.id.pic)
         var testName: TextView = view.findViewById(R.id.targetName)
         var score: TextView = view.findViewById(R.id.apiResult)
-        var rank: TextView = view.findViewById(R.id.apiResult)
+        var rank: TextView = view.findViewById(R.id.riskRank)
         //imageView.setImageResource(arrayList[position].imageId)
         testName.text = arrayList[position].name
         score.text = arrayList[position].score
