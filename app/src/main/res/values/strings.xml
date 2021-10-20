@@ -3,4 +3,6 @@
     <string name="title_npa">NPA</string>
     <string name="title_apk">APK</string>
     <string name="title_report">Report</string>
+    <string name="upload_text">Please upload your APK file below:</string>
+    <string name="upload_button">Upload</string>
 </resources>
