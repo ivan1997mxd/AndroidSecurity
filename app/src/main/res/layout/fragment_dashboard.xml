@@ -1,36 +1,142 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainpage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.DashboardFragment">
 
+    <TextView
+        android:id="@+id/logviewID"
+        android:layout_width="320dp"
+        android:layout_height="230dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/background"
+        android:gravity="top"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="10dp"
+        android:scrollbars="vertical"
+        android:textColor="#3F51B5" />
 
-    <ImageView
-        android:id="@+id/image_view"
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:layout_margin="24dp"
-        android:contentDescription="File"
-        app:srcCompat="@drawable/ic_baseline_android_24"
-        app:layout_constraintBottom_toBottomOf="@id/upload_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/upload_button"
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:text="Upload"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_below="@id/logviewID"
+        android:layout_marginTop="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/serverAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:ems="10"
+                android:text="192.168.1.71:27017"
+                android:inputType="text"/>
+
+            <Button
+                android:id="@+id/toggleAdminBtn"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/serverAddress"
+                android:layout_alignStart="@+id/serverAddress"
+                android:text="@string/activate_admin" />
+
+            <Button
+                android:id="@+id/activateKPE"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/toggleAdminBtn"
+                android:layout_alignStart="@+id/toggleAdminBtn"
+                android:text="@string/activate_kpe" />
+
+            <Button
+                android:id="@+id/testDbConnection"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/activateKPE"
+                android:layout_alignStart="@+id/activateKPE"
+                android:onClick="testDbConnection"
+                android:text="Test DB Connection" />
+
+            <Button
+                android:id="@+id/initNpaClient"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/testDbConnection"
+                android:layout_alignStart="@+id/testDbConnection"
+                android:onClick="handleNpaClientInitialization"
+                android:text="Initialize NPA Client" />
+
+            <Button
+                android:id="@+id/getNetworkMonitorProfiles"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/initNpaClient"
+                android:layout_alignStart="@+id/initNpaClient"
+                android:onClick="handleGetNetworkMonitorProfiles"
+                android:text="View Network Monitor Profiles" />
+
+            <Button
+                android:id="@+id/getProfiles"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/getNetworkMonitorProfiles"
+                android:layout_alignStart="@+id/getNetworkMonitorProfiles"
+                android:onClick="handleGetProfiles"
+                android:text="View Profiles" />
+
+            <Button
+                android:id="@+id/startNpaClient"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/getProfiles"
+                android:layout_alignStart="@+id/getProfiles"
+                android:onClick="handleStartCollectingNpaDataPoints"
+                android:text="Start NPA Client" />
+
+            <Button
+                android:id="@+id/stopNpaClient"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/startNpaClient"
+                android:layout_alignStart="@+id/startNpaClient"
+                android:onClick="handleStopCollectingNpaDataPoints"
+                android:text="Stop NPA Client" />
+
+            <Button
+                android:id="@+id/registerNpaProfile"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/stopNpaClient"
+                android:layout_alignStart="@+id/stopNpaClient"
+                android:onClick="handleRegisterNetworkMonitorProfile"
+                android:text="Register NPA Profile" />
+
+            <Button
+                android:id="@+id/unregisterNpaProfile"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/registerNpaProfile"
+                android:layout_alignStart="@+id/registerNpaProfile"
+                android:onClick="handleUnregisterNetworkMonitorProfile"
+                android:text="Unregister NPA Profile" />
+
+            <Button
+                android:id="@+id/checkActiveProfile"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/unregisterNpaProfile"
+                android:layout_alignStart="@+id/unregisterNpaProfile"
+                android:onClick="handleIsProfileActivated"
+                android:text="Check NPA Profile activation" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
