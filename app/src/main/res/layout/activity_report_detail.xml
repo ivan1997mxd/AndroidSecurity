@@ -23,7 +23,7 @@
                 android:layout_height="100dp"
                 android:layout_centerHorizontal="true"
 
-                android:src="@drawable/t2" />
+                android:src="@drawable/safe" />
 
             <LinearLayout
                 android:paddingStart="20dp"

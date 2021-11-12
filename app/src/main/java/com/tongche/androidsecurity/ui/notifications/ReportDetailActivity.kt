@@ -25,15 +25,21 @@ class ReportDetailActivity : AppCompatActivity() {
         val scoreView: TextView = findViewById(R.id.de_score)
         val riskRankView: TextView = findViewById(R.id.de_rank)
         val detailView: ListView = findViewById(R.id.de_detail)
+        val imageView:ImageView = findViewById(R.id.depic)
 
         val name = intent.getStringExtra("name")
         val score = intent.getStringExtra("score")
         val riskRank = intent.getStringExtra("riskRank")
         val details = intent.getParcelableArrayListExtra<Result>("details")
             ?: throw IllegalStateException("array list is null")
+        if (riskRank =="No Risk"){
+            imageView.setImageResource(R.drawable.safe)
+        }else{
+            imageView.setImageResource(R.drawable.unsafe)
+        }
         nameView.text = name
-        scoreView.text = score
-        riskRankView.text = riskRank
+        scoreView.text ="Score: "+ score
+        riskRankView.text ="Risk rank: "+ riskRank
         detailView.adapter = DetailAdapter(this, details)
 
     }
@@ -60,10 +66,17 @@ class DetailAdapter(private val context: Context, private val arrayList: ArrayLi
         val method: TextView = view.findViewById(R.id.method)
         val detail: TextView = view.findViewById(R.id.result)
         //imageView.setImageResource(arrayList[position].imageId)
+
         engineName.text = arrayList[position].engine_name
-        category.text = arrayList[position].category
-        method.text = arrayList[position].method
-        detail.text = arrayList[position].result
+        category.text = "Category: "+arrayList[position].category
+        method.text = "Method: "+arrayList[position].method
+        if(arrayList[position].result=="null"){
+            detail.text = "Result: safe"
+        }
+        else{
+            detail.text = "Result: "+arrayList[position].result
+        }
+
         return view
     }
 }

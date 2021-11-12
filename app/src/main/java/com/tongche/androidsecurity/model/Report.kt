@@ -47,18 +47,18 @@ data class Result(
 }
 
 data class State(
-    var harmless: Int,
-    var type_unsupported: Int,
-    var suspicious: Int,
-    var confirmed_timeout: Int,
-    var timeout: Int,
-    var failure: Int,
-    var malicious: Int,
-    var undetected: Int
+    var harmless: String,
+    var type_unsupported: String,
+    var suspicious: String,
+    var confirmed_timeout: String,
+    var timeout: String,
+    var failure: String,
+    var malicious: String,
+    var undetected: String
 )
 
 
-open class Report(
+open class  Report(
     val id: ObjectId = ObjectId(),
     var name: String,
     var score: String,

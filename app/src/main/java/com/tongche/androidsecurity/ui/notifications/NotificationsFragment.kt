@@ -28,6 +28,8 @@ import android.os.StrictMode
 import android.os.StrictMode.ThreadPolicy
 import java.io.Serializable
 import android.content.Intent.getIntent
+import android.widget.ImageView
+import com.tongche.androidsecurity.R
 
 
 class NotificationsFragment : Fragment() {
@@ -37,7 +39,7 @@ class NotificationsFragment : Fragment() {
     private var _binding: FragmentNotificationsBinding? = null
     private val binding get() = _binding!!
     private var npaDbService = NpaDbService label@{
-        return@label ConnectionString("mongodb://192.168.1.71:27017")
+        return@label ConnectionString("mongodb://192.168.0.142:27017")
     }
 
 
@@ -66,6 +68,7 @@ class NotificationsFragment : Fragment() {
 //            var taskReport = Report(name[i], score[i], riskRank[i], details = "some details here")
 //            taskArryList.add(taskReport)
 //        }
+
         binding.listview.isClickable = true
         binding.listview.adapter = ReportAdapter(context as Activity, taskArryList)
         binding.listview.setOnItemClickListener { parent, view, position, id ->

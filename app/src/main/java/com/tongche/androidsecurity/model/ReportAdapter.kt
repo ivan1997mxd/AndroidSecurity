@@ -18,10 +18,16 @@ class ReportAdapter(private val context: Activity, private val arrayList: ArrayL
         var testName: TextView = view.findViewById(R.id.targetName)
         var score: TextView = view.findViewById(R.id.apiResult)
         var rank: TextView = view.findViewById(R.id.riskRank)
-        //imageView.setImageResource(arrayList[position].imageId)
+
+        if (arrayList[position].riskRank =="No Risk"){
+            imageView.setImageResource(R.drawable.safe)
+        }else{
+            imageView.setImageResource(R.drawable.unsafe)
+        }
+
         testName.text = arrayList[position].name
-        score.text = arrayList[position].score
-        rank.text = arrayList[position].riskRank
+        score.text = "Score: "+arrayList[position].score
+        rank.text ="Risk rank: " +arrayList[position].riskRank
         return view
     }
 }

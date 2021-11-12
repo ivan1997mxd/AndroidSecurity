@@ -33,6 +33,7 @@
         <entry key="app/src/main/res/layout/fragment_report_details.xml" value="0.16979166666666667" />
         <entry key="app/src/main/res/layout/list_content.xml" value="0.24114583333333334" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/result_item.xml" value="0.24375" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.24114583333333334" />
       </map>
     </option>
