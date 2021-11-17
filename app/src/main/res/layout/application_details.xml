@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/padding"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_pane">
+
+    <LinearLayout
+        android:id="@+id/layout_application"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="@dimen/icon"
+                    android:layout_height="@dimen/icon"
+                    android:layout_marginRight="@dimen/padding"
+                    android:contentDescription="@string/iv_application_icon"
+                    android:padding="@dimen/padding" />
+
+            </LinearLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_text"
+                    android:textSize="@dimen/large_font_detail"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/package_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/padding_text"
+                    android:textSize="@dimen/small_font_detail" />
+
+                <TextView
+                    android:id="@+id/version"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/padding_text"
+                    android:textSize="@dimen/small_font_detail" />
+
+            </TableLayout>
+
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_pane">
+
+            <android.widget.Button
+                android:id="@+id/button_open"
+                style="@style/button_round"
+                android:layout_marginRight="@dimen/padding"
+                android:background="@drawable/button_open" />
+
+            <android.widget.Button
+                android:id="@+id/button_uninstall"
+                style="@style/button_round"
+                android:layout_marginLeft="@dimen/padding"
+                android:layout_marginRight="@dimen/padding"
+                android:background="@drawable/button_delete" />
+
+            <android.widget.Button
+                android:id="@+id/trusted"
+                style="@style/button_round"
+                android:layout_marginLeft="@dimen/padding"
+                android:layout_marginRight="@dimen/padding"
+                android:contentDescription="@string/iv_button_trusted"
+                android:padding="@dimen/padding" />
+
+            <android.widget.Button
+                android:id="@+id/button_market"
+                style="@style/button_round"
+                android:layout_marginLeft="@dimen/padding"
+                android:background="@drawable/button_star"
+                android:padding="@dimen/padding_market" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/message_no_application"
+        style="@style/text_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/message_no_application" />
+
+    <ScrollView
+        android:id="@+id/layout_no_permission"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/message_no_permission" />
+
+    </ScrollView>
+
+    <ExpandableListView
+        android:id="@+id/permissions_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:groupIndicator="@null"
+        android:padding="@dimen/padding_pane" />
+
+</LinearLayout>

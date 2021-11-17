@@ -2,22 +2,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tongche.androidsecurity">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
-    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_APP_MGMT"/>
-    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_GENERIC_VPN"/>
-    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_NPA"/>
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_APP_MGMT" />
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_GENERIC_VPN" />
+    <uses-permission android:name="com.samsung.android.knox.permission.KNOX_NPA" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:requestLegacyExternalStorage="true"
-        android:theme="@style/Theme.AndroidSecurity">
+        android:theme="@style/Theme.AndroidSecurity"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ui.permission.PermissionActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.notifications.ReportDetailActivity"
             android:exported="true" />
@@ -31,6 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"

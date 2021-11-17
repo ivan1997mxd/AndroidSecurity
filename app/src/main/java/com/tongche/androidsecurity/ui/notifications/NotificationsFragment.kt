@@ -39,7 +39,7 @@ class NotificationsFragment : Fragment() {
     private var _binding: FragmentNotificationsBinding? = null
     private val binding get() = _binding!!
     private var npaDbService = NpaDbService label@{
-        return@label ConnectionString("mongodb://192.168.0.142:27017")
+        return@label ConnectionString("mongodb://192.168.1.71:27017")
     }
 
 

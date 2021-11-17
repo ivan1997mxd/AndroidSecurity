@@ -22,4 +22,10 @@
         android:name="com.tongche.androidsecurity.ui.notifications.NotificationsFragment"
         android:label="@string/title_report"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/permission_details"
+        android:name="com.tongche.androidsecurity.ui.permission.ApplicationFragment"
+        android:label="Details"
+        tools:layout="@layout/application_details"/>
 </navigation>
